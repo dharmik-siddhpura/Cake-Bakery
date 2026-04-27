@@ -273,14 +273,15 @@ public partial class Frm_Cart : System.Web.UI.Page
                     // DS.WriteXml(@"E:\Project\Bakery Shop\Xml\SaleBill.xml");
                 }
                 Order_Id++;
-                Response.Write("<script language=javascript>alert('Your Order Has Been Accepted....')</script>");
                 qry = "DELETE FROM Tbl_Cart WHERE ClientId = " + ClientId + "";
                 Cnn = new SqlConnection(Cnstr);
                 Cmd = new SqlCommand(qry, Cnn);
                 Cnn.Open();
                 Cmd.ExecuteNonQuery();
                 Cnn.Close();
-                bindCart();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "orderSuccess",
+                    "alert('Your Order Has Been Accepted!'); window.location='HomePage.aspx';", true);
+                return;
             }
             Response.Redirect("HomePage.aspx");
         }

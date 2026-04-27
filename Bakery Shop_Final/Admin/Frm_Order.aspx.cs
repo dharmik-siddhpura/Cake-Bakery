@@ -36,22 +36,18 @@ public partial class Admin_Frm_Order : System.Web.UI.Page
         qry += " Where CM.ClientId = O.Client_Id AND O.Order_Isact='TRUE'";
         Cnn = new SqlConnection(Cnstr);
         Cmd = new SqlCommand(qry, Cnn);
-        Cnn.Open();
         Da = new SqlDataAdapter(Cmd);
-
         DataTable dt = new DataTable();
         Da.Fill(dt);
-        Dr = Cmd.ExecuteReader();
-        if (Dr.Read())
+        if (dt.Rows.Count > 0)
         {
             Order.DataSource = dt;
             Order.DataBind();
         }
         else
         {
-            lbl_error.Text = "No Recored Found...";
+            lbl_error.Text = "No Record Found...";
         }
-        Cnn.Close();
     }
     protected void Date_Click(object sender, EventArgs e)
     {
@@ -60,21 +56,18 @@ public partial class Admin_Frm_Order : System.Web.UI.Page
         qry += "AND CM.ClientId = O.Client_Id order by O.Date desc";
         Cnn = new SqlConnection(Cnstr);
         Cmd = new SqlCommand(qry, Cnn);
-        Cnn.Open();
         Da = new SqlDataAdapter(Cmd);
         DS = new DataSet();
         Da.Fill(DS);
-        Dr = Cmd.ExecuteReader();
-        if (Dr.Read())
+        if (DS.Tables[0].Rows.Count > 0)
         {
             Order.DataSource = DS.Tables[0];
             Order.DataBind();
         }
         else
         {
-            lbl_error.Text = "No Recored Found...";
+            lbl_error.Text = "No Record Found...";
         }
-        Cnn.Close();
     }
    
 }
