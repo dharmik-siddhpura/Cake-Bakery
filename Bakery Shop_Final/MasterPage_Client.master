@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_Client.master.cs" Inherits="MasterPage_Client" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="icon" href="Style_Js/MasterPage Style/img/fav-icon.png" type="image/x-icon" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Cake - Bakery</title>
+
+        <!-- Icon css link -->
+        <link href="Style_Js/MasterPage Style/css/font-awesome.min.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/vendors/linearicons/style.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/vendors/flat-icon/flaticon.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="Style_Js/MasterPage Style/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!-- Rev slider css -->
+        <link href="Style_Js/MasterPage Style/vendors/revolution/css/settings.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/vendors/revolution/css/layers.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/vendors/revolution/css/navigation.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/vendors/animate-css/animate.css" rel="stylesheet">
+        
+        <!-- Extra plugin css -->
+        <link href="Style_Js/MasterPage Style/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/vendors/magnifc-popup/magnific-popup.css" rel="stylesheet">
+        
+        <link href="Style_Js/MasterPage Style/css/style.css" rel="stylesheet">
+        <link href="Style_Js/MasterPage Style/css/responsive.css" rel="stylesheet">
+
+    <asp:ContentPlaceHolder id="Mp_Header" runat="server">
+        <br />
+    </asp:ContentPlaceHolder>
+    <br />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="Content_PlaceHolder_1" runat="server">
+            <asp:ScriptManager id="ScrManage1" runat="server">
+            </asp:ScriptManager>
+            <br />
+           </asp:ContentPlaceHolder>
+            <!--================Main Header Area =================-->
+		    <header class="main_header_area">
+
+            <%-- Header Part Start************************************************** --%>
+			    <div class="top_header_area row m0">
+                    <div class="container">
+                        <div class="float-left">
+                            <a href="tell:+91 1234567089"><i class="fa fa-phone" aria-hidden="true"></i>(+91) 1234567089</a> <a href="mailto:info@BackeryShop.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>info@BackeryShop.com</a>
+                        </div>
+                        <div class="float-right">
+                            <ul class="h_search list_style">
+                                <li><a href="Frm_Cart.aspx"><i class="lnr lnr-cart"></i></a>&nbsp&nbsp&nbsp<asp:Label ID="Lable_showName" runat="server" Text="Label" Font-Bold="True" ForeColor="White" Visible="false"></asp:Label>
+                                </li><%--Class-shop_cart--%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+			 <%-- Header Part over************************************************** --%>
+                <div class="main_menu_two">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <a class="navbar-brand" href="HomePage.aspx">
+                            <img src="Style_Js/img/logo-2.png" alt=""></a>
+                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="navbar-nav justify-content-end" >
+                                <Items>
+                                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/HomePage.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Product" Value="Product" NavigateUrl="~/Frm_Product.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Cart" Value="Contect Us" NavigateUrl="~/Frm_Cart.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Order" Value="My Order" NavigateUrl="~/Frm_MyOrder.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Login" Value="Register" NavigateUrl="~/Frm_Login.aspx"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                            <%--<asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" CssClass="navbar-nav justify-content-end" Visible="False" >
+                                <Items>
+                                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Homepage.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Product" Value="Product" NavigateUrl="~/Frm_Product.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Cart" Value="Contect Us" NavigateUrl="~/Frm_Cart.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Logout" Value="Register" NavigateUrl="~/Frm_Login.aspx"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>--%>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        <!--================End Main Header Area =================-->
+            
+            <div>           
+            <asp:ContentPlaceHolder id="CPH_ContentHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--================Footer Area =================-->
+             <footer class="footer_area">
+                 <div class="footer_widgets">
+                     <div class="container">
+                         <div class="row footer_wd_inner">
+                             <div class="col-lg-3 col-6">
+                                 <aside class="f_widget f_about_widget">
+                                     <img src="Style_Js/img/footer-logo.png" alt="">
+                                     <p>
+                                         Come Experience The Taste Of Joy.
+                                          Great taste, quality service.
+                                        We beat it, you eat it!
+                                         Live the sweet life!
+                                        Let us put a smile on your face.
+                                     </p>
+                                 </aside>
+                             </div>
+                             <div class="col-lg-3 col-6">
+                                 <aside class="f_widget f_link_widget">
+                                     <ul>
+                                         <div class="f_title">
+                                             <h3>Time</h3>
+                                             <li>
+                                                 <h6>Mon To Sat : 8 am - 8 pm</h6>
+                                             </li>
+                                             <li>
+                                                 <h6 >Sun. : Closed</h6>
+                                             </li>
+                                     </ul>
+                                 </aside>
+                             </div>
+                             <div class="col-lg-3 col-6" >
+                                 <aside class="f_widget f_contact_widget">
+                                     <div class="f_title">
+                                         <h3>Contact Info</h3>
+                                     </div>
+                                     <h4>0288-123456789</h4>
+                                     <p>
+                                         Backery Shop<br />03,Patel Colony,Jamnagar,361008</p>
+                                     <h5>BackeryShop_02@yahoo.com</h5>
+                                 </aside>
+                             </div>
+                             <div class="col-lg-3 col-6">
+                                 <aside class="f_widget f_about_widget">
+                                     <img src="Style_Js/img/service/3.png"" alt="">
+                                 </aside>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </footer>
+        <!--================End Footer Area =================-->
+        
+      
+<%-- ******************************************************************************************************************************** --%>
+
+            
+     
+    </div>
+    </form>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="Style_Js/MasterPage Style/js/jquery-3.2.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="Style_Js/MasterPage Style/js/popper.min.js"></script>
+        <script src="Style_Js/MasterPage Style/js/bootstrap.min.js"></script>
+        <!-- Rev slider js -->
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <!-- Extra plugin js -->
+        <script src="Style_Js/MasterPage Style/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/magnifc-popup/jquery.magnific-popup.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/datetime-picker/js/moment.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/datetime-picker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/jquery-ui/jquery-ui.min.js"></script>
+        <script src="Style_Js/MasterPage Style/vendors/lightbox/simpleLightbox.min.js"></script>
+        
+        <script src="Style_Js/js/theme.js"></script>
+</body>
+</html>
